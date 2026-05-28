@@ -1,0 +1,63 @@
+import React, { useState } from "react";
+
+function ProfileCard({ details }) {
+
+  const [isVisible, setIsVisible] =
+    useState(false);
+
+  const toggleDetails = () => {
+
+    setIsVisible(!isVisible);
+  };
+
+  return (
+
+    <div className="profile-card">
+
+      <h2>{details.fullName}</h2>
+
+      <p>
+        <strong>Designation:</strong>
+        {details.designation}
+      </p>
+
+      <p>
+        <strong>Organization:</strong>
+        {details.organization}
+      </p>
+
+      {
+        isVisible ? (
+          <div className="extra-details">
+
+            <p>
+              <strong>Email:</strong>
+              {details.mail}
+            </p>
+
+            <p>
+              <strong>Mobile:</strong>
+              {details.mobile}
+            </p>
+
+          </div>
+        ) : null
+      }
+
+      <button
+        onClick={toggleDetails}
+      >
+
+        {
+          isVisible
+            ? "Hide Details"
+            : "View Details"
+        }
+
+      </button>
+
+    </div>
+  );
+}
+
+export default ProfileCard;
