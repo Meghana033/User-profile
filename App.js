@@ -1,57 +1,72 @@
 import React from "react";
-import UserProfile from "./UserProfile";
+
+import ProfileCard from "./ProfileCard";
 import "./style.css";
 
 function App() {
 
-  const users = [
+  const employeeList = [
+
     {
-      id: 1,
-      name: "Suneetha",
-      jobTitle: "Frontend Developer",
-      company: "Delloite",
-      email: "suneetha@gmail.com",
-      phone: "9876543210"
+      id: 101,
+      fullName: "Meghana ",
+      designation: "Frontend Engineer",
+      organization: "Accenture",
+      mail: "meghana@gmail.com",
+      mobile: "9876501234"
     },
 
     {
-      id: 2,
-      name: "Asha",
-      jobTitle: "UI/UX Designer",
-      company: "Infosys",
-      email: "anusha@gmail.com",
-      phone: "9123456780"
+      id: 102,
+      fullName: "Abhinav",
+      designation: "UI Designer",
+      organization: "Wipro",
+      mail: "Abhinav0304gmail.com",
+      mobile: "9123409876"
     },
 
     {
-      id: 3,
-      name: "Manisha",
-      jobTitle: "React Developer",
-      company: "TCS",
-      email: "meghana@gmail.com",
-      phone: "9012345678"
+      id: 103,
+      fullName: "Divya",
+      designation: "MERN Stack Developer",
+      organization: "Capgemini",
+      mail: "divya@gmail.com",
+      mobile: "9011223344"
+    },
+
+    {
+      id: 104,
+      fullName: "Nandhini",
+      designation: "Backend Developer",
+      organization: "Tech Mahindra",
+      mail: "nandhini@gmail.com",
+      mobile: "9988776655"
     }
   ];
 
   return (
-    <div className="container">
 
-      <h1>User Profile Cards</h1>
+    <section className="main-wrapper">
 
-      <div className="card-container">
+      <h1 className="heading">
+        Employee Profile Directory
+      </h1>
+
+      <div className="profiles-grid">
 
         {
-          users.map((user) => (
-            <UserProfile
-              key={user.id}
-              user={user}
+          employeeList.map((employee) => (
+
+            <ProfileCard
+              key={employee.id}
+              details={employee}
             />
           ))
         }
 
       </div>
 
-    </div>
+    </section>
   );
 }
 
